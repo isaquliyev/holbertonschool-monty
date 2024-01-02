@@ -12,6 +12,8 @@
  */
 
 char **splitter(char *str, char *delim);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

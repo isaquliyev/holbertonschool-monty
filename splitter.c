@@ -1,4 +1,4 @@
-#include "main.h"
+#include "header.h"
 
 /**
  * splitter - splits given string into parts

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "header.h"
 
 int main(int argc, char **argv)
 {
@@ -22,7 +22,10 @@ int main(int argc, char **argv)
 
 	while ((r = getline(&line, &len, fp)) != -1)
 	{
-		command = splitter(line, " \n\t");
+		command = realloc(command, strlen(line));
+		command[line_num] = strdup(line);
+		line_num++;
+		/*command = splitter(line, " \n\t");
 		if (!strcmp(command[0], "push"))
 		{
 			if (atoi(command[1]) != 0 || atoi(command[1]) == command[1])
@@ -37,7 +40,7 @@ int main(int argc, char **argv)
 		line_num++;
 		for (i = 0; command[i]; i++)
 			free(command[i]);
-		free(command);
+		free(command);*/
 	}
 	return (0);
 }
