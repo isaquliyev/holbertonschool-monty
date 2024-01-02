@@ -1,4 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include <string.h>
+
+/**
+ * FUNCTION PROTOTYPES
+ */
+
+char **splitter(char *str, char *delim);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
