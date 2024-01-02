@@ -6,6 +6,7 @@ int main(int argc, char **argv)
 	size_t len = 0;
 	FILE *fp;
 	char *line = NULL, **command;
+	stack_t node = malloc(sizeof(stack_t));
 
 	if (argc != 2)
 	{
@@ -22,11 +23,20 @@ int main(int argc, char **argv)
 	while ((r = getline(&line, &len, fp)) != -1)
 	{
 		command = splitter(line, " \n\t");
-		for (i = 0; command[i]; i++)
+		if (!strcmp(command[0], "push"))
 		{
-			printf("%s\n", command[i]);
-			command[i];
+			if (atoi(command[1]) != 0 || atoi(command[1]) == command[1])
+			{
+				node.n = atoi(command[1]);
+			}
+			else
+				printf("L%d: usage: push integer", line_num);
 		}
+		else
+			printf("L%d: unknown instruction %s", line_num, command[0]);
+		line_num++;
+		for (i = 0; command[i]; i++)
+			free(command[i]);
 		free(command);
 	}
 	return (0);
