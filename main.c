@@ -12,10 +12,10 @@
 
 int main(int argc, char **argv)
 {
-	unsigned int r, line_num = 0, i = 0;
+	unsigned int line_num = 0, i = 0;
 	size_t len = 0;
 	FILE *fp;
-	char *line = NULL, **command, *temp;
+	char *line = NULL, **command;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
 	}
-	while ((r = getline(&line, &len, fp)) != -1)
+	while (getline(&line, &len, fp) != -1)
 	{
 		command = splitter(line, " \n\t$");
 		if (command && command[0])
