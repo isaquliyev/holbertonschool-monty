@@ -5,6 +5,8 @@
  *
  * @str: given string
  *
+ * @delim: delimineter
+ *
  * Return: modified char array.
  */
 

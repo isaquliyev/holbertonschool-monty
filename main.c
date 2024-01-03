@@ -26,18 +26,17 @@ int main(int argc, char **argv)
 		{
 			if (!strcmp(command[0], "push"))
 				push(&stack, command, line_num);
+			if (!strcmp(command[0], "pall"))
+				pall(&stack, line_num);
 		}
 		while (command && command[i])
 		{
 			free(command[i]);
-			printf("CHECKER %u --------------------\n", i);
 			i++;
 		}
 		if (command)
 			free(command);
 		i = 0;
 	}
-	printf("CHECKER PALL ---------------\n");
-	pall(&stack, 100);
 	return (0);
 }
