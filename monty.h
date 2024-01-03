@@ -41,11 +41,35 @@ typedef struct instruction_s
 } instruction_t;
 
 /*
+ * GLOBAL PARAMETER
+ */
+
+/**
+ * struct global - global structure
+ * @line_number: number of current line
+ * @num: second parameter of current line
+ * @head: top of stack
+ * @fd: file descriptor
+ * @buffer: input text
+ */
+
+typedef struct global
+{
+	unsigned int line_number;
+	char *num;
+	stack_t *head;
+	FILE *fd;
+	char *buffer;
+} global_t;
+
+extern global_t glob;
+
+
+/*
  * FUNCTION PROTOTYPES
  */
 
-char **splitter(char *str, char *delim);
-void push(stack_t **stack, char **line_tokens, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 int _isnumber(char *str);
 #endif
