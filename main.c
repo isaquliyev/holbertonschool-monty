@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv)
 {
-	unsigned int line_num = 0, i = 0;
+	unsigned int line_num = 1, i = 0;
 	size_t len = 0;
 	FILE *fp;
 	char *line = NULL, **command;
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	}
 	while (getline(&line, &len, fp) != -1)
 	{
-		command = splitter(line, " \n\t$");
+		command = splitter(line, " \n\t\r$");
 		if (command && command[0])
 		{
 			if (!strcmp(command[0], "push"))

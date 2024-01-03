@@ -19,7 +19,7 @@ void push(stack_t **stack, char **line_tokens, unsigned int line_number)
 		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (_isnumber(line_tokens[1]))
+	if (line_tokens[1] && _isnumber(line_tokens[1]))
 	{
 		new_node->n = atoi(line_tokens[1]);
 		new_node->next = *stack;
