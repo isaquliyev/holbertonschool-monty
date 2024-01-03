@@ -8,14 +8,6 @@
 #include <string.h>
 
 /**
- * FUNCTION PROTOTYPES
- */
-
-char **splitter(char *str, char *delim);
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-
-/**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
@@ -44,3 +36,11 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * FUNCTION PROTOTYPES
+ */
+
+char **splitter(char *str, char *delim);
+void push(stack_t **stack, char **line_tokens, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
