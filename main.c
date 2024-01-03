@@ -1,5 +1,15 @@
 #include "header.h"
 
+/**
+ * main - main function of project
+ *
+ * @argc: number of arguments
+ *
+ * @argv: command line arguments
+ *
+ * Return: always 0.
+ */
+
 int main(int argc, char **argv)
 {
 	unsigned int r, line_num = 0, i = 0;
