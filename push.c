@@ -1,5 +1,15 @@
 #include "header.h"
 
+/**
+ * push - push number to stack
+ *
+ * @stack: top element of stack
+ *
+ * @line_tokens: tokenized line into two dimensional array
+ *
+ * @line_number: line number of .m file
+ */
+
 void push(stack_t **stack, char **line_tokens, unsigned int line_number)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
