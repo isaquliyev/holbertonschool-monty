@@ -5,31 +5,32 @@
  *
  * @stack: top element of stack
  *
- * @line_tokens: tokenized line into two dimensional array
- *
  * @line_number: line number of .m file
  */
 
-void push(stack_t **stack, char **line_tokens, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *new_node;
+	int n;
 
-	if (!new_node)
+	if (!glob.num || !_isnumber(glob.num))
 	{
-		printf("Error: malloc failed\n");
+		dprintf(2, "L%u: ", line_number);
+		dprintf(2, "usage: push integer\n");
+		free_glob();
 		exit(EXIT_FAILURE);
 	}
-	if (line_tokens[1] && _isnumber(line_tokens[1]))
+	n = atoi(glob.num);
+	new_node = malloc(sizeof(stack_t));
+	if (!new_node)
 	{
-		new_node->n = atoi(line_tokens[1]);
-		new_node->next = *stack;
-		new_node->prev = NULL;
-		if (*stack)
-			(*stack)->prev = new_node;
-		*stack = new_node;
+		dprintf(2, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
-	else
-	{
-		printf("L%u: usage: push integer\n", line_number);
-	}
+	new_node->n = n;
+	new_node->next = *stack;
+	new_node->prev = NULL;
+	if ((*stack))
+		(*stack)->prev = new_node;
+	*stack = new_node;
 }

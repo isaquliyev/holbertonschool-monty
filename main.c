@@ -28,50 +28,31 @@ void start_global(FILE *fd)
 
 int main(int argc, char **argv)
 {
-	unsigned int line_num = 1, i = 0;
-	size_t len = 0;
-	FILE *fp;
-	char *line = NULL, **command;
-	stack_t *stack = NULL, *temp;
+	void (*f)(stack_t **stack, unsigned int line_number);
+	FILE *fd;
+	size_t size = 0, r;
+	char *tokens[2] = {NULL, NULL};
 
-	if (argc != 2)
+	fd = input_checker(argc, argv);
+	start_global(fd);
+	while ((r = getline(&glob.buffer, &size, fd) != -1))
 	{
-		printf("USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-
-	fp = fopen(argv[1], "r");
-	if (!fp)
-	{
-		printf("Error: Can't open file %s\n", argv[1]);
-	}
-	while (getline(&line, &len, fp) != -1)
-	{
-		command = splitter(line, " \n\t\r$");
-		if (command && command[0])
+		tokens[0] = strtok(glob.buffer, " \t\n$");
+		if (tokens[0])
 		{
-			if (!strcmp(command[0], "push"))
-				push(&stack, command, line_num);
-			if (!strcmp(command[0], "pall"))
-				pall(&stack, line_num);
+			f = get_function(tokens[0]);
+			if (!f)
+			{
+				dprintf(2, "L%u: ", glob.line_number);
+				dprintf(2, "unknown instruction %s\n", tokens[0]);
+				free_glob();
+				exit(EXIT_FAILURE);
+			}
+			glob.num = strtok(NULL, " \t\n$");
+			f(&glob.head, glob.line_number);
 		}
-		while (command && command[i])
-		{
-			free(command[i]);
-			i++;
-		}
-		if (command)
-			free(command);
-		i = 0;
+		glob.line_number++;
 	}
-	free(line);
-	fclose(fp);
-	if (stack)
-	{
-		temp = stack;
-		stack = stack->next;
-		free(temp);
-	}
-	free(stack);
+	free_glob();
 	return (0);
 }
