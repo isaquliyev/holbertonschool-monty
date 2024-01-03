@@ -1,4 +1,4 @@
-#include "header.h"
+#include "monty.h"
 
 /**
  * splitter - splits given string into parts
