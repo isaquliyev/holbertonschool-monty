@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -46,4 +47,5 @@ typedef struct instruction_s
 char **splitter(char *str, char *delim);
 void push(stack_t **stack, char **line_tokens, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+int _isnumber(char *str);
 #endif
