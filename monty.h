@@ -73,4 +73,5 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void (*get_function(char *opcodes))(stack_t **stack, unsigned int line_number);
 int _isnumber(char *str);
+FILE *input_checker(int argc, char **argv);
 #endif
