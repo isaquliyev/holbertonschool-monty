@@ -30,6 +30,6 @@ void push(stack_t **stack, char **line_tokens, unsigned int line_number)
 	}
 	else
 	{
-		printf("Unknown Instruction: %u\n", line_number);
+		printf("L%u: usage: push integer\n", line_number);
 	}
 }
