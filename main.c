@@ -1,5 +1,21 @@
 #include "monty.h"
 
+global_t glob;
+
+/**
+ * start_global - set initial values for global variable glob
+ *
+ * @fd: file descriptor
+ */
+void start_global(FILE *fd)
+{
+	glob.line_number = 1;
+	glob.num = NULL;
+	glob.head = NULL;
+	glob.fd = fd;
+	glob.buffer = NULL;
+}
+
 /**
  * main - main function of project
  *
