@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	size_t len = 0;
 	FILE *fp;
 	char *line = NULL, **command;
-	stack_t *stack = NULL;
+	stack_t *stack = NULL, *temp;
 
 	if (argc != 2)
 	{
@@ -48,5 +48,14 @@ int main(int argc, char **argv)
 			free(command);
 		i = 0;
 	}
+	free(line);
+	fclose(fp);
+	if (stack)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+	free(stack);
 	return (0);
 }
