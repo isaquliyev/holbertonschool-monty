@@ -1,7 +1,5 @@
 #include "monty.h"
 
-global_t glob;
-
 /**
  * start_global - set initial values for global variable glob
  *

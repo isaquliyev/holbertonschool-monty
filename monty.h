@@ -62,7 +62,7 @@ typedef struct global
 	char *buffer;
 } global_t;
 
-extern global_t glob;
+global_t glob;
 
 
 /*
