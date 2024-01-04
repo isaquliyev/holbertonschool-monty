@@ -2,7 +2,7 @@
 
 /**
  * nop - this instruction doesn't do anything
- * 
+ *
  * @stack: pointer to the top of the stack
  * @line_number: line number of given instruction
  */
