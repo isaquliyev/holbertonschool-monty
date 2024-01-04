@@ -13,12 +13,13 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack)
 	{
+		free_glob();
 		dprintf(2, "L%u: can't pop empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	temp = (*stack)->next;
-	if (temp)
-		temp->prev = NULL;
-	free(*stack);
-	*stack = temp;
+	temp = *stack;
+	*stack = (*stack)->next;
+	if (*stack)
+		(*stack)->prev = NULL;
+	free(temp);
 }
