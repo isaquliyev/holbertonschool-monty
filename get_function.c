@@ -11,6 +11,7 @@ void (*get_function(char *opcodes))(stack_t **stack, unsigned int line_number)
 	instruction_t relations[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	int i;
