@@ -14,6 +14,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	{
 		putchar('\n');
 		free_glob();
+		(void)line_number;
 		exit(EXIT_SUCCESS);
 	}
 	putchar((*stack)->n);
