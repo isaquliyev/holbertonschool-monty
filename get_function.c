@@ -17,6 +17,7 @@ void (*get_function(char *opcodes))(stack_t **stack, unsigned int line_number)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", div},
 		{NULL, NULL}
 	};
 	int i;
