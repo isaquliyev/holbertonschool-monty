@@ -9,18 +9,18 @@
 
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	if (!stack || !*stack)
+	if (!*stack)
 	{
 		free_glob();
 		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n >= 0 && (*stack)->n < 128)
-		printf("%c\n", (*stack)->n);
+		puts((char *)&(*stack)->n);
 	else
 	{
 		free_glob();
-		dprintf(2, "L%u: can't pchar, stack value out of range\n", line_number);
+		dprintf(2, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 }
