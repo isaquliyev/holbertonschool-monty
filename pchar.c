@@ -9,7 +9,7 @@
 
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	if (!*stack)
+	if (!stack || !*stack)
 	{
 		free_glob();
 		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
