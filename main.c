@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 	while ((r = getline(&glob.buffer, &size, fd) != -1))
 	{
 		tokens[0] = strtok(glob.buffer, " \t\n$");
-		if (tokens[0])
+		if (tokens[0] && tokens[0][0] != '#')
 		{
 			f = get_function(tokens[0]);
 			if (!f)
