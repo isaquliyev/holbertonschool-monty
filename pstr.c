@@ -13,6 +13,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	if (!*stack || !(*stack)->n || !isascii((*stack)->n))
 	{
 		putchar('\n');
+		free_glob();
 		exit(EXIT_SUCCESS);
 	}
 	putchar((*stack)->n);
