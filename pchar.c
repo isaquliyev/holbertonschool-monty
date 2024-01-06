@@ -15,7 +15,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		dprintf(2, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->n >= 0 && (*stack)->n < 256)
+	if ((*stack)->n >= 0 && (*stack)->n < 128)
 		puts((char *)&(*stack)->n);
 	else
 	{
