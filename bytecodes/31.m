@@ -13,3 +13,4 @@ push 128
 push 99
 push 83
 pstr
+pall
