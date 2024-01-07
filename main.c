@@ -8,6 +8,7 @@
 void start_global(FILE *fd)
 {
 	glob.line_number = 1;
+	strcpy(glob.type, "stack");
 	glob.num = NULL;
 	glob.head = NULL;
 	glob.fd = fd;
