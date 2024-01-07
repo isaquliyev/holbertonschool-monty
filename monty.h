@@ -47,6 +47,7 @@ typedef struct instruction_s
 /**
  * struct global - global structure
  * @line_number: number of current line
+ * @type: type of data structure, stack or queue.
  * @num: second parameter of current line
  * @head: top of stack
  * @fd: file descriptor
@@ -56,6 +57,7 @@ typedef struct instruction_s
 typedef struct global
 {
 	unsigned int line_number;
+	char type[6];
 	char *num;
 	stack_t *head;
 	FILE *fd;
@@ -84,6 +86,8 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
 
 void (*get_function(char *opcodes))(stack_t **stack, unsigned int line_number);
 int _isnumber(char *str);
