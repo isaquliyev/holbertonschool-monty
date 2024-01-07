@@ -11,9 +11,12 @@
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *last = *stack;
-	stack_t *head = (*stack)->next;
+	stack_t *head;
 	(void)line_number;
 
+	if (!*stack || !(*stack)->next)
+		return;
+	head = (*stack)->next;
 	while (last->next)
 		last = last->next;
 	last->next = *stack;
