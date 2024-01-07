@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * stack - makes global variable type "stack".
+ * _stack - makes global variable type "stack".
  *
  * @stack: top of stack
  * @line_number: line number for error message
