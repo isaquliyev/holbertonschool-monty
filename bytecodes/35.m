@@ -1,6 +1,6 @@
-rotl
+rotr
 push 1
-rotl
+rotr
 push 2
 push 3
 push 4
@@ -11,5 +11,5 @@ push 8
 push 9
 push 0
 pall
-rotl
+rotr
 pall
