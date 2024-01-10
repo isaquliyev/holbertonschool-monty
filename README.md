@@ -105,5 +105,5 @@ Keep the scope of global variables as small as possible.
 |[nop.c](https://github.com/isaquliyev/holbertonschool-monty/blob/master/nop.c)|This instruction doesn't anything.|
 |[monty.h](https://github.com/isaquliyev/holbertonschool-monty/blob/master/monty.h)|Including essential libraries and structs for this project.|
 ## Authors/Collaborators
-*	Isa Guliyev-[Github]https://github.com/isaquliyev/
-*	Zeynal Mustafayev-[Github]https://github.com/ZeynalMustafayev/
+*	Isa Guliyev-[Github](https://github.com/isaquliyev/)
+*	Zeynal Mustafayev-[Github](https://github.com/ZeynalMustafayev/)
