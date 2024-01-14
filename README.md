@@ -109,4 +109,4 @@ Keep the scope of global variables as small as possible.
 *	Isa Guliyev-[Github](https://github.com/isaquliyev/)
 *	Zeynal Mustafayev-[Github](https://github.com/ZeynalMustafayev/)
 
-C:\Users\Logipass\Downloads\Stack-Queue.png
+![alt text](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.geeksforgeeks.org%2Fwp-content%2Fcdn-uploads%2FStack-Queue.png&tbnid=qzpfjGw4IaO4LM&vet=12ahUKEwiNvL234NyDAxUE7rsIHXZyA0AQMygBegQIARBS..i&imgrefurl=https%3A%2F%2Fwww.geeksforgeeks.org%2Fqueue-using-stacks%2F&docid=edwESU7jxIz2-M&w=755&h=534&q=stack%20queue&ved=2ahUKEwiNvL234NyDAxUE7rsIHXZyA0AQMygBegQIARBS)
