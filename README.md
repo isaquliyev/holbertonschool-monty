@@ -108,3 +108,5 @@ Keep the scope of global variables as small as possible.
 ## Authors/Collaborators
 *	Isa Guliyev-[Github](https://github.com/isaquliyev/)
 *	Zeynal Mustafayev-[Github](https://github.com/ZeynalMustafayev/)
+## Picture
+![Stack-Queue](https://github.com/isaquliyev/holbertonschool-monty/assets/139635017/1c72b9fb-6f26-41ba-9609-bec7e622ff67)
