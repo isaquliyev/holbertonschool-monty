@@ -20,6 +20,7 @@ A queue is another fundamental data structure in computer science that follows t
 
 * To know the common implementations of stacks and queues
 
+
 -**Stacks:**
 
 **Array Implementation:**
@@ -107,3 +108,5 @@ Keep the scope of global variables as small as possible.
 ## Authors/Collaborators
 *	Isa Guliyev-[Github](https://github.com/isaquliyev/)
 *	Zeynal Mustafayev-[Github](https://github.com/ZeynalMustafayev/)
+
+C:\Users\Logipass\Downloads\Stack-Queue.png
